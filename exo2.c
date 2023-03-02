@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <exercice.c>
 
 typedef struct {
     char title[50];
@@ -21,11 +22,11 @@ int main() {
         printf("Quantité : ");
         scanf("%d", &products[num_products].quantity);
 
-        printf("Voulez-vous continuer ? (oui/non) : ");
+        printf("Voulez-vous continuer ? (o/N) : ");
         scanf("%s", response);
 
         num_products++;
-    } while (strcmp(response, "oui") == 0 && num_products < 100);
+    } while (mystrcmp(response, "o") == 0 && num_products < 100);
 
     float total = 0;
     printf("| Titre de l'article | Prix / unité | Quantité | Prix avec taxes |\n");
